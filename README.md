@@ -1,30 +1,21 @@
-# Paper Slider
+# Feather Icons
 
-Vaadin 14 Java integration of feather-icons
+Feather is a collection of simply beautiful open source icons. Each icon is designed on a 24x24 grid with an emphasis on simplicity, consistency, and flexibility. This addon enables Feather Icons to be easily used inside Vaadin apps.
 
-## Development instructions
+See: https://feathericons.com/
 
-JavaScript modules can either be published as an NPM package or be kept as local 
-files in your project. The local JavaScript modules should be put in 
-`src/main/resources/META-INF/frontend` so that they are automatically found and 
-used in the using application.
-
-If the modules are published then the package should be noted in the component 
-using the `@NpmPackage` annotation in addition to using `@JsModule` annotation.
+## Usage
 
 
-Starting the test/demo server:
-1. Run `mvn jetty:run`.
-2. Open http://localhost:8080 in the browser.
-
-## Publishing to Vaadin Directory
-
-You can create the zip package needed for [Vaadin Directory](https://vaadin.com/directory/) using
 ```
-mvn versions:set -DnewVersion=1.0.0 # You cannot publish snapshot versions 
-mvn install -Pdirectory
+FeatherIcon layout = Feather.LAYOUT.create();
+FeatherIcon search = Feather.SEARCH.create(e -> System.out.println("clicked!"));
+
+FeatherIcon triangle = new FeatherIcon(Feather.ALERT_TRIANGLE);
+FeatherIcon activity = new FeatherIcon("activity");
+
+add(layout, search, activity, triangle);
 ```
 
-The package is created as `target/feather-icons-1.0.0.zip`
 
-For more information or to upload the package, visit https://vaadin.com/directory/my-components?uploadNewComponent
+For more information, visit https://vaadin.com/directory/component/feather-icons
